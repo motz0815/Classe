@@ -1,0 +1,8 @@
+name: Classe
+version: @version@
+main: xyz.motz.classe.Classe
+author: motz0815
+api-version: @apiVersion@
+depend:
+  - NBTAPI
+  - CommandAPI
