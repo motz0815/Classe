@@ -1,5 +1,5 @@
 # Classe
-The plugin for survival servers.
+The plugin for survival servers. Currently only compatible with version 1.18
 
 ## Description
 This is a work in progress. The goal is to have a complete and customizable experience for smaller survival servers
