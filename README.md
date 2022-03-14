@@ -10,5 +10,5 @@ I would appreciate it if you filed issues or made pull requests, it helps a lot.
 Feature requests are always welcome, too!
 
 ## Publication
-As this project is currently in a very early stage, there are no official release archives available for download, though the newest builds can always be found on my Jenkins.
-https://ci.motz.xyz/job/Classe/job/master/
+As this project is currently in a very early stage, there are no official release archives available for download, though the newest builds can always be found here on GitHub
+https://github.com/motz0815/Classe/actions
