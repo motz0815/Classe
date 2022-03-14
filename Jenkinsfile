@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
+                scmSkip(deleteBuild: true)
                 sh 'chmod +x ./gradlew'
                 sh './gradlew build'
             }
