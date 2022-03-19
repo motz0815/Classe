@@ -9,6 +9,7 @@ running Paper, Pufferfish or Purpur.
 I would appreciate it if you filed issues or made pull requests, it helps a lot.
 Feature requests are always welcome, too!
 
-## Publication
-As this project is currently in a very early stage, there are no official release archives available for download, though the newest builds can always be found here on GitHub
-https://github.com/motz0815/Classe/actions
+## Usage
+As this project is currently in a very early stage, there are no official release archives available for download, though the newest builds can always be found [here on GitHub](https://github.com/motz0815/Classe/actions)
+### Dependencies
+To use this plugin, you need [NBTAPI](https://www.spigotmc.org/resources/nbt-api.7939/) and [CommandAPI](https://www.spigotmc.org/resources/api-commandapi-1-16-5-1-18-2.62353/) installed on your server.
