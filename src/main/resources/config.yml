@@ -1,1 +1,3 @@
 disable-creeper-block-damage: false
+dispenser:
+  can-breed-animals: false
