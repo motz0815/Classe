@@ -1,9 +1,7 @@
 package xyz.motz.classe.listeners;
 
-import de.tr7zw.nbtapi.NBTTileEntity;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.block.Dispenser;
 import org.bukkit.block.data.Directional;
@@ -12,11 +10,8 @@ import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.RayTraceResult;
 import xyz.motz.classe.Classe;
-import xyz.motz.classe.util.mechanics.BreedingDispenser;
 
 public class DispenserListener implements Listener {
     @EventHandler
@@ -50,18 +45,15 @@ public class DispenserListener implements Listener {
                         // breeding success
                         animal.setLoveModeTicks(600);
 
+                        // remove item from dispenser inventory
+                        dispenser.getInventory().removeItem(e.getItem());
+                        e.setCancelled(true);
+
                         animal.getWorld().spawnParticle(Particle.HEART, animal.getLocation().add(0, 1, 0), 1);
                         Bukkit.getServer().sendMessage(Component.text("breeded!"));
                     }
                 }
             }
-        }
-    }
-
-    @EventHandler
-    public void onPlace(BlockPlaceEvent e) {
-        if (BreedingDispenser.isBreedingDispenser(e.getItemInHand())) {
-            new NBTTileEntity(e.getBlock().getState()).getPersistentDataContainer().setString("classe.type", BreedingDispenser.id());
         }
     }
 }

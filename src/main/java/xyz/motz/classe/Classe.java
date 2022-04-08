@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.motz.classe.commands.ClasseCommand;
 import xyz.motz.classe.listeners.CreeperListener;
 import xyz.motz.classe.listeners.DispenserListener;
-import xyz.motz.classe.util.mechanics.BreedingDispenser;
 
 public class Classe extends JavaPlugin {
     @Getter
@@ -34,9 +33,6 @@ public class Classe extends JavaPlugin {
         // Listeners
         Bukkit.getPluginManager().registerEvents(new DispenserListener(), this);
         Bukkit.getPluginManager().registerEvents(new CreeperListener(), this);
-
-        // Recipes
-        Bukkit.addRecipe(BreedingDispenser.recipe());
 
         getLogger().info("Classe enabled!");
     }
