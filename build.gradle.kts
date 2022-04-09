@@ -35,6 +35,8 @@ dependencies {
 
     implementation("net.kyori:adventure-text-minimessage:4.10.1") // MiniMessage
 
+    implementation("com.github.retrooper:packetevents:v1.8.3") // PacketEvents
+
     // not minecraft specific
     compileOnly("org.projectlombok:lombok:1.18.22") // Lombok
     annotationProcessor("org.projectlombok:lombok:1.18.22") // Lombok
