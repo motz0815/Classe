@@ -1,7 +1,5 @@
 package xyz.motz.classe.util.mechanics.dispensers;
 
-import net.kyori.adventure.text.Component;
-import org.bukkit.Bukkit;
 import org.bukkit.Particle;
 import org.bukkit.block.Dispenser;
 import org.bukkit.block.data.Directional;
@@ -34,7 +32,7 @@ public class BreedHandler {
         Classe.getInstance().getLogger().fine(entity.toString());
 
         if (entity instanceof Animals animal) {
-            Bukkit.getServer().sendMessage(Component.text(animal.canBreed()));
+            Classe.getInstance().getLogger().fine(String.valueOf(animal.canBreed()));
             if (animal.canBreed() && animal.isBreedItem(e.getItem())) {
                 // breeding success
                 animal.setLoveModeTicks(600);

@@ -7,6 +7,7 @@ import org.bukkit.event.block.BlockDispenseEvent;
 import xyz.motz.classe.Classe;
 import xyz.motz.classe.util.mechanics.dispensers.BlockBreakHandler;
 import xyz.motz.classe.util.mechanics.dispensers.BreedHandler;
+import xyz.motz.classe.util.mechanics.dispensers.PlantHandler;
 
 public class DispenserListener implements Listener {
     @EventHandler
@@ -26,6 +27,14 @@ public class DispenserListener implements Listener {
                     return;
                 }
                 Classe.getInstance().getLogger().fine("block breaking failed");
+            }
+
+            if (Classe.getInstance().getConfig().getBoolean("dispenser.can-plant-crops")) {
+                if (PlantHandler.handle(e, dispenser)) {
+                    Classe.getInstance().getLogger().fine("crop planting succeeded");
+                    return;
+                }
+                Classe.getInstance().getLogger().fine("crop planting failed");
             }
         }
     }

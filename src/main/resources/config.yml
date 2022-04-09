@@ -2,3 +2,4 @@ disable-creeper-block-damage: false
 dispenser:
   can-breed-animals: false
   can-break-blocks: false
+  can-plant-crops: false
