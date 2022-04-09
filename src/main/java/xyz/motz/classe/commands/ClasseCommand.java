@@ -9,6 +9,7 @@ public class ClasseCommand extends CommandAPICommand implements CommandExecutor 
     public ClasseCommand() {
         super("classe");
         withSubcommand(new ConfigReloadCommand());
+        withSubcommand(new LoggerLevelCommand());
         executes(this);
     }
 
