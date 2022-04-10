@@ -34,14 +34,15 @@ public class PlantHandler {
             block = dispenser.getLocation().add(dispenserDirection.getFacing().getDirection().multiply(2)).getBlock();
         if (block.getType() != FARMLAND) return false;
 
+        // cancel event so the item doesn't get dropped
+        e.setCancelled(true);
+
         // only place the seed if the farmland is empty
         Block crop = block.getRelative(BlockFace.UP);
         if (crop.getType() == AIR) {
             // place seed
             crop.setType(SEEDMAP.get(e.getItem().getType()), true);
 
-            // cancel event so the item doesn't get dropped
-            e.setCancelled(true);
             // remove the item from the dispenser's inventory
             dispenser.getInventory().removeItem(e.getItem());
         }
