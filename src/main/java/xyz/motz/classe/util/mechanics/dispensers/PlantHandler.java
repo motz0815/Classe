@@ -27,16 +27,19 @@ public class PlantHandler {
 
         Directional dispenserDirection = (Directional) dispenser.getBlockData();
 
+        // two tries to reach farmland
         Block block = dispenser.getLocation().add(dispenserDirection.getFacing().getDirection()).getBlock();
         if (block.getType() != FARMLAND)
             block = dispenser.getLocation().add(dispenserDirection.getFacing().getDirection().multiply(2)).getBlock();
         if (block.getType() != FARMLAND) return false;
 
+        // cancel event so the item doesn't get dropped
         e.setCancelled(true);
 
         Block crop = block.getLocation().add(0, 1, 0).getBlock();
         crop.setType(SEEDMAP.get(e.getItem().getType()), true);
 
+        // remove the item from the dispenser's inventory
         dispenser.getInventory().removeItem(e.getItem());
 
         return true;
